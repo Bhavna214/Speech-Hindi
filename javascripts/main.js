@@ -569,6 +569,7 @@ async function planetDes() {
                if (voiceMessage.toLowerCase() == "mercury") {
                   text1 = "Great! It is Mercury.<br>It is closest to the sun!"
                   translateLang(text1);
+                  document.getElementById("mercury").style.display="none";
                   isSuccess = true;
                   i++;
                }
@@ -588,6 +589,7 @@ async function planetDes() {
                if (x.toLowerCase() == "venus") {
                   text1 = "Great! This is Venus which is the hottest planet but comes after Mercury<br>(not the sun). Lets move ahead!"
                   translateLang(text1);
+                  document.getElementById("venus").style.display="none";
                   isSuccess = true;
                   i++;
                }
@@ -606,6 +608,7 @@ async function planetDes() {
                if (x.toLowerCase() == "earth") {
                   text1 = "Great! The planets before the Milky way are Terrestrial Planets. Earth is the second-last Terrestrial planet."
                   translateLang(text1);
+                  document.getElementById("earth").style.display="none";
                   isSuccess = true;
                   i++;
                }
@@ -620,6 +623,7 @@ async function planetDes() {
                if (x.toLowerCase() == "mars") {
                   text1 = "Yes, Mars!!<br>It comes right before the milky way"
                   translateLang(text1);
+                  document.getElementById("mars").style.display="none";
                   isSuccess = true;
                   i++;
                }
@@ -634,6 +638,7 @@ async function planetDes() {
                if (x.toLowerCase() == "jupiter") {
                   text1 = "That's right. Jupiter!<br>It comes right after the milky way."
                   translateLang(text1);
+                  document.getElementById("jupiter").style.display="none";
                   isSuccess = true;
                   i++;
                }
@@ -648,6 +653,7 @@ async function planetDes() {
                if (x.toLowerCase() == "saturn") {
                   text1 = "You are right, Saturn.<br>The planets after the Milky way are Jovian Planets. It is the second Jovian planet."
                   translateLang(text1);
+                  document.getElementById("saturn").style.display="none";
                   isSuccess = true;
                   i++;
                }
@@ -662,6 +668,7 @@ async function planetDes() {
                if (x.toLowerCase() == "uranus") {
                   text1 = "That's correct, Uranus!<br>It is the second-last planet in the solar system and is a neighbour of Saturn!"
                   translateLang(text1);
+                  document.getElementById("uranus").style.display="none";
                   isSuccess = true;
                   i++;
                }
@@ -676,6 +683,7 @@ async function planetDes() {
                if (x.toLowerCase() == "neptune") {
                   text1 = "Great! It is Neptune.<br>It is the last planet in the solar system."
                   translateLang(text1);
+                  document.getElementById("neptune").style.display="none";
                   isSuccess = true;
                   i++;
                }
