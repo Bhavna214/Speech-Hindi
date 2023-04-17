@@ -18,9 +18,6 @@
     }
   </style>
   <body>
-    <!-- <video autoplay muted loop id="background_video">
-        <source src="stars_bg.mp4" type="video/mp4">
-    </video>    -->
     <span id="titleOfTheGame">Recreate the solar system</span>
     <div id="content" class="Content">
         <div class="draggable-elements" id="draggable-elements">
@@ -37,37 +34,29 @@
         <section class="droppable-elements" id="droppable-elements">
             <img src="images/Sun.png" alt="" id="sun">
             <img src="images/GGBB.png" alt="" id="belt">
-            <div class="orbit" id="neptune1">
-                <!-- <div class="droppable" data-draggable-id="neptune"></div> -->
-                <img src="images/Neptune.png" alt="Neptune" class="planets droppable" draggable="true"> 
+            <div class="orbit" id="neptuneOrbit">
+                <img src="images/Neptune.png" alt="Neptune" class="planets droppable" id="neptune1" draggable="true"> 
             </div>
-            <div class="orbit" id="uranus1">
-                <!-- <div class="droppable" data-draggable-id="uranus" ></div> -->
-                <img src="images/Uranus.png" alt="Uranus" class="planets droppable" draggable="true">
+            <div class="orbit" id="uranusOrbit">
+                <img src="images/Uranus.png" alt="Uranus" class="planets droppable" id="uranus1" draggable="true">
             </div>
-            <div class="orbit" id="saturn1">
-                <!-- <div class="droppable" data-draggable-id="saturn"></div>   -->
-                <img src="images/Saturn.png" alt="Saturn" class="planets droppable" draggable="true">
+            <div class="orbit" id="saturnOrbit">
+                <img src="images/Saturn.png" alt="Saturn" class="planets droppable" id="saturn1" draggable="true">
             </div>
-            <div class="orbit" id="jupiter1">
-                <!-- <div class="droppable" data-draggable-id="jupiter" ></div>  -->
-                <img src="images/Jupiter.png" alt="Jupiter" class="planets droppable" draggable="true">
+            <div class="orbit" id="jupiterOrbit">
+                <img src="images/Jupiter.png" alt="Jupiter" class="planets droppable" id="jupiter1" draggable="true">
             </div>
-            <div class="orbit" id="mars1">
-                <!-- <div class="droppable" data-draggable-id="mars" ></div>  -->
-                <img src="images/Mars.png" alt="Mars" class="planets droppable" draggable="true">
+            <div class="orbit" id="marsOrbit">
+                <img src="images/Mars.png" alt="Mars" class="planets droppable" id="mars1" draggable="true">
             </div>
-            <div class="orbit" id="earth1">
-                <!-- <div class="droppable" data-draggable-id="earth" ></div> -->
-                <img src="images/Earth.png" alt="Earth" class="planets droppable" draggable="true">
+            <div class="orbit" id="earthOrbit">
+                <img src="images/Earth.png" alt="Earth" class="planets droppable" id="earth1" draggable="true">
             </div>
-            <div class="orbit" id="venus1">
-                <!-- <div class="droppable" data-draggable-id="venus"></div> -->
-                <img src="images/Venus.png" alt="Venus" class="planets droppable" draggable="true">
+            <div class="orbit" id="venusOrbit">
+                <img src="images/Venus.png" alt="Venus" class="planets droppable" id="venus1" draggable="true">
             </div>
-            <div class="orbit" id="mercury1">
-                <!-- <div class="droppable" data-draggable-id="mercury" ></div>  -->
-                <img src="images/Mercury.png" alt="Mercury" class="planets droppable" draggable="true">
+            <div class="orbit" id="mercuryOrbit">
+                <img src="images/Mercury.png" alt="Mercury" class="planets droppable" id="mercury1" draggable="true">
             </div>
         </section>
 
@@ -76,8 +65,7 @@
                 <div class="instructions to-text" id="instruct">
                     Hello I am Dexter! I will be helping you to recreate the Solar System!
                 </div>
-                <button onclick="OKbutton()" id="button">LET'S GO</button>
-                <button onclick="showAlert()">Click here to trigger the modal!</button>
+                <!-- <button onclick="showAlert()">Click here to trigger the modal!</button> -->
                 
             </div>
             <div class="alert" id="alert" style="display: none;">
@@ -114,54 +102,7 @@
             utterance = new SpeechSynthesisUtterance(translatedText)
             utterance.lang = lang;
             speechSynthesis.speak(utterance)
-//    function getVoices() {
-//       let voices = speechSynthesis.getVoices();
-//       if(!voices.length){
-//         // some time the voice will not be initialized so we can call spaek with empty string
-//         // this will initialize the voices 
-//         let utterance = new SpeechSynthesisUtterance("");
-//         speechSynthesis.speak(utterance);
-//         voices = speechSynthesis.getVoices();
-//       }
-//       return voices;
-//     }
-    
-    
-//     function speak(text, voice, rate, pitch, volume) {
-//       // create a SpeechSynthesisUtterance to configure the how text to be spoken 
-//       let speakData = new SpeechSynthesisUtterance();
-//       speakData.volume = volume; // From 0 to 1
-//       speakData.rate = rate; // From 0.1 to 10
-//       speakData.pitch = pitch; // From 0 to 2
-//       speakData.text = text;
-//       speakData.lang = lang;
-//       speakData.voice = voice;
-      
-//       // pass the SpeechSynthesisUtterance to speechSynthesis.speak to start speaking 
-//       speechSynthesis.speak(speakData);
-    
-//     }
-   
-//     if ('speechSynthesis' in window) {
-   
-//       let voices = getVoices();
-//       let rate = 1, pitch = 1, volume = 1;
-//       let text = translatedText;
-
-//       for(let i=0; i<voices.length; i++){
-//         console.log(voices[i])
-//       }
-    
-//       speak(text, voices[5], rate, pitch, volume);
-//     //   for(i=0; i<voices.length; i++){
-//     //     console.log(voices[i])
-//     //   }
-//     //   console.log(voices[5])
-//     }else{
-//       console.log(' Speech Synthesis Not Supported 😞'); 
-//     }
 }
-// dexter_voice();
 
 function showAlert(){
     document.getElementById("alert1").style.display="block"

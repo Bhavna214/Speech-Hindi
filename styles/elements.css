@@ -21,14 +21,6 @@
     cursor: grab;
     transition: opacity 0.2s;
 }
-.draggable.dragged{
-    user-select: none;
-    opacity: 1;
-}
-
-.draggable.dragged:hover{
-    opacity: 0.1;
-}
 
 .droppable-elements{
     display: flex;
@@ -44,8 +36,6 @@
     margin: auto;
     margin-top: -1rem;
     top: 0;   left: 0;   right: 0;   bottom: 0;
-    height: 3.5rem;
-    width: 3.5rem;
     border-radius: 100%;
     background-color: transparent;
     border: 2px white solid;
@@ -59,18 +49,5 @@
     width:5rem;
     height: 5rem;
     opacity: 0;
-}
-
-.droppable.droppable-hover{
-    border-width: 3px;
-    transform: scale(1.1);
-}
-
-.droppable.dropped{
-    border-width: 0px;
-    color: white;
-}
-
-.droppable.dropped img{
-    pointer-events: none;
+    border: 0px;
 }

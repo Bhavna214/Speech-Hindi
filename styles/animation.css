@@ -1,4 +1,3 @@
-/*Styling for the planets, sun and galaxy*/
 .mercury-revolve,.venus-revolve,.earth-revolve,.mars-revolve,.jupiter-revolve,
 .saturn-revolve,.uranus-revolve,.neptune-revolve{
   border: 0.22vmin dashed rgba(128, 128, 126, 0.984);
