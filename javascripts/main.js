@@ -280,6 +280,15 @@ async function planetDes() {
                   isSuccess = true;
                   i++;
                }
+               // if (voiceMessage.toLowerCase() == "jupiter") {
+               //    text1 = "Great! It is Mercury.<br>It is closest to the sun!"
+               //    translateLang(text1);
+               //    // document.getElementById("mercury").style.display="none";
+               //    // document.getElementById("mercury1").style.opacity = "1";
+               //    // document.getElementById("mercuryOrbit").className = "mercury-revolve";
+               //    isSuccess = false;
+               //    // i++;
+               // }
             });
 
 
