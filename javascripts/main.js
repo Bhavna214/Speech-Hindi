@@ -129,10 +129,10 @@ function insertionSort(arr, n) {
 if ('webkitSpeechRecognition' in window) {
    console.log("Web Speech API is supported")
  } else {
-   console.log("Web Speec  h API is not supported")
+   console.log("Web Speech API is not supported")
  } 
 
-arr = [2,1,5,6,8,7,3,4]  
+arr = [4,2,1,5,6,8,7,3]  
 // 3 replace with 5 // real  = [2,1,5,4,6,8,7,3]
 // while(arr.length < 8){
 //    var r = Math.floor(Math.random() * 8) + 1;
@@ -160,9 +160,10 @@ async function convertSpeechToText(newCallbackFunction) {
    // Define event listeners for recognition
    recognition.onresult = function(event) {
        // Get the transcript from the first result
-      console.log(event)
+      // console.log(event)
+      
       const transcript = event.results[0][0].transcript;
-       
+      console.log(transcript)
        // Log the transcript
       // console.log(transcript);
       newCallbackFunction(transcript);
@@ -240,168 +241,243 @@ async function planetDes() {
    var i = 0;
    let isSuccess = false;
    do {
-      if(isSuccess == true)
-         isSuccess = false;
-      if(!isSuccess){
       switch (arr[i]) {
          case 1:
             voiceMessage = "Which is the dark grey planet that has wrinkles on it?"
             await translateLang(voiceMessage);
-            await wait(5000);
-            await convertSpeechToText((voiceMessage) => {
-               if (voiceMessage.toLowerCase() == "mercury") {
-                  text1 = "Great! It is Mercury.<br>It is closest to the sun!"
-                  translateLang(text1);
-                  document.getElementById("mercury").style.display="none";
-                  document.getElementById("mercury1").style.opacity = "1";
-                  document.getElementById("mercuryOrbit").className = "mercury-revolve";
-                  isSuccess = true;
-                  i++;
-               }
-            });
-            await wait(10000);
+            await wait(7000);
+            
+            do{
+               await convertSpeechToText((x) => {
+                  if (x.toLowerCase() == "mercury") {
+                     text1 = "Great! It is Mercury.<br>It is closest to the sun!"
+                     translateLang(text1);
+                     document.getElementById("mercury").style.display="none";
+                     document.getElementById("mercury1").style.opacity = "1";
+                     document.getElementById("mercuryOrbit").className = "mercury-revolve";
+                     isSuccess = true;
+                     i++;
+                  }
+               });
+               await wait(5000);
+            }while(isSuccess != true) 
+            // await wait(10000);
             break;
          case 2:
             // System.Threading.Thread.Sleep(3000);
             console.log(arr[i]);
-            voiceMessage = "Which is the yellowish-white planet with few brownish-red spots? These spots signify the volcanic rocks!"
+            voiceMessage = "Which is the yellowish-white planet "
+            // with few brownish-red spots? These spots signify the volcanic rocks!
             await translateLang(voiceMessage);
-            await wait(10000);
+            await wait(7000);
             // setTimeout(()=>{speech = convertSpeechToText();}, 5000);
             //speech = convertSpeechToText();
             //console.log(speech)
-            await convertSpeechToText((x) => {
-               if (x.toLowerCase() == "venus") {
-                  text1 = "Great! This is Venus which is the hottest planet but comes after Mercury<br>(not the sun). Lets move ahead!"
-                  translateLang(text1);
-                  document.getElementById("venus").style.display="none";
-                  document.getElementById("venus1").style.opacity = "1";
-                  document.getElementById("venusOrbit").className = "venus-revolve";
-                  isSuccess = true;
-                  i++;
-               }
-               // if (voiceMessage.toLowerCase() == "jupiter") {
-               //    text1 = "Great! It is Mercury.<br>It is closest to the sun!"
-               //    translateLang(text1);
-               //    // document.getElementById("mercury").style.display="none";
-               //    // document.getElementById("mercury1").style.opacity = "1";
-               //    // document.getElementById("mercuryOrbit").className = "mercury-revolve";
-               //    isSuccess = false;
-               //    // i++;
-               // }
-            });
-
-
-            await wait(10000);
-         
+            do{
+               await convertSpeechToText((x) => {
+                  if (x.toLowerCase() == "venus") {
+                     text1 = "Great! This is Venus which is the hottest planet but comes after Mercury<br>(not the sun). Lets move ahead!"
+                     translateLang(text1);
+                     document.getElementById("venus").style.display="none";
+                     document.getElementById("venus1").style.opacity = "1";
+                     document.getElementById("venusOrbit").className = "venus-revolve";
+                     isSuccess = true;
+                     i++;
+                  }
+                  else if(x.toLowerCase() == "jupiter"){
+                     text1 = "No the correct planet is smaller in size than this."
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
+                  else if(x.toLowerCase() == "saturn"){
+                     text1 = "No actually, the correct planet does not have rings."
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
+               });
+               await wait(5000);
+            }while(isSuccess != true)     
             break;
          case 3:
             voiceMessage = "Which planet is A combination of water and land? It is a rocky, terrestrial planet."
             await translateLang(voiceMessage);
-            await wait(10000);
-            await convertSpeechToText((x) => {
-               if (x.toLowerCase() == "earth") {
-                  text1 = "Great! The planets before the Milky way are Terrestrial Planets. Earth is the second-last Terrestrial planet."
-                  translateLang(text1);
-                  document.getElementById("earth").style.display="none";
-                  document.getElementById("earth1").style.opacity = "1";
-                  document.getElementById("earthOrbit").className = "earth-revolve";
-                  isSuccess = true;
-                  i++;
-               }
-            });
-            await wait(10000);
+            await wait(7000);
+            do{
+               await convertSpeechToText((x) => {
+                  if (x.toLowerCase() == "earth") {
+                     text1 = "Great! The planets before the Milky way are Terrestrial Planets. Earth is the second-last Terrestrial planet."
+                     translateLang(text1);
+                     document.getElementById("earth").style.display="none";
+                     document.getElementById("earth1").style.opacity = "1";
+                     document.getElementById("earthOrbit").className = "earth-revolve";
+                     isSuccess = true;
+                     i++;
+                  }
+                  if(x.toLowerCase() == "neptune"){
+                     text1 = "Wrong, The correct planet also has green spots which represents the land."
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
+                  if(x.toLowerCase() == "uranus"){
+                     text1 = "Wrong, The correct planet does not have rings."
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
+               });
+               await wait(5000);
+            }while(isSuccess != true)
+            // await wait(10000);
             break;
          case 4:
             voiceMessage = "Which is the red planet? It got the colour red because of the rusty iron on its surface."
             translateLang(voiceMessage);
             await wait(10000);
-            await convertSpeechToText((x) => {
-               if (x.toLowerCase() == "mars") {
-                  text1 = "Yes, Mars!!<br>It comes right before the milky way"
-                  translateLang(text1);
-                  document.getElementById("mars").style.display="none";
-                  document.getElementById("mars1").style.opacity = "1";
-                  document.getElementById("marsOrbit").className = "mars-revolve";
-                  isSuccess = true;
-                  i++;
-               }
-            });
-            await wait(10000);
+            do{
+               await convertSpeechToText((x) => {
+                  if (x.toLowerCase() == "mass") {
+                     text1 = "Yes, Mars!!<br>It comes right before the milky way"
+                     translateLang(text1);
+                     document.getElementById("mars").style.display="none";
+                     document.getElementById("mars1").style.opacity = "1";
+                     document.getElementById("marsOrbit").className = "mars-revolve";
+                     isSuccess = true;
+                     i++;
+                  }
+                  if(x.toLowerCase() == "jupiter"){
+                     text1 = "Wrong, The correct planet is smaller in size than this."
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
+               });
+               await wait(5000);
+            }while(isSuccess != true)
+            // await wait(10000);
             break;
          case 5:
             voiceMessage = "Which is the largest planet in the solar system? It is a gas giant and its colour changes with storms and wind in the planet's atmosphere."
             translateLang(voiceMessage);
-            await wait(10000);
-            await convertSpeechToText((x) => {
-               if (x.toLowerCase() == "jupiter") {
-                  text1 = "That's right. Jupiter!<br>It comes right after the milky way."
-                  translateLang(text1);
-                  document.getElementById("jupiter").style.display="none";
-                  document.getElementById("jupiter1").style.opacity = "1";
-                  document.getElementById("jupiterOrbit").className = "jupiter-revolve";
-                  isSuccess = true;
-                  i++;
-               }
-            });
-            await wait(10000);
+            await wait(7000);
+               do{
+                  await convertSpeechToText((x) => {
+                     if (x.toLowerCase() == "jupiter") {
+                        text1 = "That's right. Jupiter!<br>It comes right after the milky way."
+                        translateLang(text1);
+                        document.getElementById("jupiter").style.display="none";
+                        document.getElementById("jupiter1").style.opacity = "1";
+                        document.getElementById("jupiterOrbit").className = "jupiter-revolve";
+                        isSuccess = true;
+                        i++;
+                     }
+                     if(x.toLowerCase() == "venus"){
+                        text1 = "No, the correct planet is larger in size than this."
+                        translateLang(text1);
+                        isSuccess = false;
+                     }
+                     if(x.toLowerCase() == "mars"){
+                        text1 = "No, the correct planet is not completely red."
+                        translateLang(text1);
+                        isSuccess = false;
+                     }
+                     if(x.toLowerCase() == "saturn"){
+                        text1 = "Opps, it is wrong, the correct planet does not have rings."
+                        translateLang(text1);
+                        isSuccess = false;
+                     }
+                  });
+                  await wait(5000);
+               }while(isSuccess != true)
+            // await wait(10000);
             break;
          case 6:
             voiceMessage = "Which is the planet with rings? It has a set of 7 main rings with spaces between them."
             translateLang(voiceMessage);
-            await wait(10000);
-            await convertSpeechToText((x) => {
-               if (x.toLowerCase() == "saturn") {
-                  text1 = "You are right, Saturn.<br>The planets after the Milky way are Jovian Planets. It is the second Jovian planet."
-                  translateLang(text1);
-                  document.getElementById("saturn").style.display="none";
-                  document.getElementById("saturn1").style.opacity = "1";
-                  document.getElementById("saturnOrbit").className = "saturn-revolve";
-                  isSuccess = true;
-                  i++;
-               }
-            });
-            await wait(10000);
+            await wait(7000);
+            do{
+               await convertSpeechToText((x) => {
+                  if (x.toLowerCase() == "saturn") {
+                     text1 = "You are right, Saturn.<br>The planets after the Milky way are Jovian Planets. It is the second Jovian planet."
+                     translateLang(text1);
+                     document.getElementById("saturn").style.display="none";
+                     document.getElementById("saturn1").style.opacity = "1";
+                     document.getElementById("saturnOrbit").className = "saturn-revolve";
+                     isSuccess = true;
+                     i++;
+                  }
+                  if(x.toLowerCase() == "uranus"){
+                     text1 = "That's wrong, The correct planet is yellowish in color with rings around it."
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
+               });
+               await wait(5000);
+            }while(isSuccess != true)
+            // await wait(10000);
             break;
          case 7:
             voiceMessage = "Which is the planet which is blue in colour and has faint rings?"
             translateLang(voiceMessage);
-            await wait(10000);
-            await convertSpeechToText((x) => {
-               if (x.toLowerCase() == "uranus") {
-                  text1 = "That's correct, Uranus!<br>It is the second-last planet in the solar system and is a neighbour of Saturn!"
-                  translateLang(text1);
-                  document.getElementById("uranus").style.display="none";
-                  document.getElementById("uranus1").style.opacity = "1";
-                  document.getElementById("uranusOrbit").className = "uranus-revolve";
-                  isSuccess = true;
-                  i++;
-               }
-            });
-            await wait(10000);
+            await wait(7000);
+            do{
+               await convertSpeechToText((x) => {
+                  if (x.toLowerCase() == "uranus") {
+                     text1 = "That's correct, Uranus!<br>It is the second-last planet in the solar system and is a neighbour of Saturn!"
+                     translateLang(text1);
+                     document.getElementById("uranus").style.display="none";
+                     document.getElementById("uranus1").style.opacity = "1";
+                     document.getElementById("uranusOrbit").className = "uranus-revolve";
+                     isSuccess = true;
+                     i++;
+                  }
+                  if(x.toLowerCase() == "neptune"){
+                     text1 = "Think again, the planet must have rings too."
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
+                  if(x.toLowerCase() == "saturn"){
+                     text1 = "Nope, the correct planet is blue in color with rings around it."
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
+               });
+               await wait(5000);
+            }while(isSuccess != true)
+            // await wait(10000);
             break;
          case 8:
             voiceMessage = "Which is the dark, cold and windy planet?<br>(It's colour is dark blue.)"
             translateLang(voiceMessage)
-            await wait(10000);
-            await convertSpeechToText((x) => {
-               if (x.toLowerCase() == "neptune") {
-                  text1 = "Great! It is Neptune.<br>It is the last planet in the solar system."
-                  translateLang(text1);
-                  document.getElementById("neptune").style.display="none";
-                  document.getElementById("neptune1").style.opacity = "1";
-                  document.getElementById("neptuneOrbit").className = "neptune-revolve";
-                  isSuccess = true;
-                  i++;
-               }
-            });
-            await wait(10000);
+            await wait(7000);
+            do{
+               await convertSpeechToText((x) => {
+                  if (x.toLowerCase() == "neptune") {
+                     text1 = "Great! It is Neptune.<br>It is the last planet in the solar system."
+                     translateLang(text1);
+                     document.getElementById("neptune").style.display="none";
+                     document.getElementById("neptune1").style.opacity = "1";
+                     document.getElementById("neptuneOrbit").className = "neptune-revolve";
+                     isSuccess = true;
+                     i++;
+                  }
+                  if(x.toLowerCase() == "mercury"){
+                     text1 = "That's wrong, the correct planet is blue in color."
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
+                  if(x.toLowerCase() == "uranus"){
+                     text1 = "No, The correct planet does not have rings around it."
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
+               });
+               await wait(5000);
+            }while(isSuccess != true)
+            // await wait(10000);
             break;
          default:
             break;
       
       }
-      }
+      
    } while(isSuccess);
 }
 planetDes();
