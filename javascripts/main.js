@@ -132,12 +132,12 @@ if ('webkitSpeechRecognition' in window) {
    console.log("Web Speec  h API is not supported")
  } 
 
-// arr = [2,1,5,6,8,7,3,4]  
+arr = [2,1,5,6,8,7,3,4]  
 // 3 replace with 5 // real  = [2,1,5,4,6,8,7,3]
-while(arr.length < 8){
-   var r = Math.floor(Math.random() * 8) + 1;
-   if(arr.indexOf(r) === -1) arr.push(r);
-}
+// while(arr.length < 8){
+//    var r = Math.floor(Math.random() * 8) + 1;
+//    if(arr.indexOf(r) === -1) arr.push(r);
+// }
 
 function wait(milliseconds) {
    return new Promise(resolve => {

@@ -61,49 +61,49 @@
     animation: ccircle 24s infinite linear;
 }
 
-#mercury{
+#mercury, #mercury1{
     width: 6.75rem;
     height: 6.75rem;
     animation: ccircle 10s infinite linear; 
 }
 
-#venus{
+#venus, #venus1{
     width: 8rem;
     height: 8rem;
     animation: circle 3s infinite linear; 
 }
 
-#earth{
+#earth, #earth1{
     width: 9rem;
     height: 9rem;
     animation: ccircle 10s infinite linear; 
 }
 
-#mars{
+#mars, #mars1{
     width: 8rem;
     height: 8rem;
     animation: ccircle 10s infinite linear; 
 }
 
-#jupiter{
+#jupiter, #jupiter1{
     height: 11rem;
     width: 11rem;
     animation: ccircle 10s infinite linear; 
 }
 
-#saturn{
+#saturn, #saturn1{
     height: 10rem;
     width: 10rem;
     animation: ccircle 10s infinite linear; 
 }
 
-#uranus{
+#uranus, #uranus1{
     width: 9.25rem;
     height: 9.25rem;
     animation: ccircle 10s infinite linear; 
 }
 
-#neptune{
+#neptune, #neptune1{
     width: 5.75rem;
     height: 5.75rem;
     margin-top: 0.5rem;
