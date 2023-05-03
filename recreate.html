@@ -76,7 +76,7 @@
                 <p id="explaination"></p>
             </div>
 
-            <!-- <div class="alert" id="alert1" style="display: none;">
+            <div class="alert" id="alert1" style="display: none;">
                 <span class="closebtn" onclick="closeAlert1()">&times;</span>
                 <h3>CHOOSE A LANGUAGE:</h3>
                 <select name="" id="">
@@ -85,7 +85,7 @@
                     <option>gu</option> 
                 </select>
                 <button class="translate">Translate</button>
-            </div> -->
+            </div>
 
             <!-- <div class="alert" id="alert1">
                 <div style="padding: 60px;">
@@ -108,7 +108,7 @@
     <script src="javascripts/guide.js"></script>
     <script>
         var lang;
-        window.onload = function(){document.getElementById("alert1").style.display="block"}
+        // window.onload = function(){document.getElementById("alert1").style.display="block"}
         function dexter_voice(lang, translatedText){
             let utterance;
             utterance = new SpeechSynthesisUtterance(translatedText)
