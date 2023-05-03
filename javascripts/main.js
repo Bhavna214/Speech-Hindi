@@ -245,7 +245,7 @@ async function planetDes() {
          case 1:
             voiceMessage = "Which is the dark grey planet that has wrinkles on it?"
             await translateLang(voiceMessage);
-            await wait(7000);
+            await wait(5500);
             
             do{
                await convertSpeechToText((x) => {
@@ -258,16 +258,20 @@ async function planetDes() {
                      isSuccess = true;
                      i++;
                   }
+                  else if(x.toLowerCase() == "please repeat"){
+                     text1 = "Which is the dark grey planet that has wrinkles on it?"
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
                });
-               await wait(5000);
+               await wait(5500);
             }while(isSuccess != true) 
             // await wait(10000);
             break;
          case 2:
             // System.Threading.Thread.Sleep(3000);
             console.log(arr[i]);
-            voiceMessage = "Which is the yellowish-white planet "
-            // with few brownish-red spots? These spots signify the volcanic rocks!
+            voiceMessage = "Which is the yellowish-white planet with few brownish-red spots? These spots signify the volcanic rocks!"
             await translateLang(voiceMessage);
             await wait(7000);
             // setTimeout(()=>{speech = convertSpeechToText();}, 5000);
@@ -294,6 +298,11 @@ async function planetDes() {
                      translateLang(text1);
                      isSuccess = false;
                   }
+                  else if(x.toLowerCase() == "please repeat"){
+                     text1 = "Which is the yellowish-white planet with few brownish-red spots? These spots signify the volcanic rocks!"
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
                });
                await wait(5000);
             }while(isSuccess != true)     
@@ -301,7 +310,7 @@ async function planetDes() {
          case 3:
             voiceMessage = "Which planet is A combination of water and land? It is a rocky, terrestrial planet."
             await translateLang(voiceMessage);
-            await wait(7000);
+            await wait(5000);
             do{
                await convertSpeechToText((x) => {
                   if (x.toLowerCase() == "earth") {
@@ -323,8 +332,13 @@ async function planetDes() {
                      translateLang(text1);
                      isSuccess = false;
                   }
+                  else if(x.toLowerCase() == "please repeat"){
+                     text1 = "Which planet is A combination of water and land? It is a rocky, terrestrial planet."
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
                });
-               await wait(5000);
+               await wait(7000);
             }while(isSuccess != true)
             // await wait(10000);
             break;
@@ -348,15 +362,20 @@ async function planetDes() {
                      translateLang(text1);
                      isSuccess = false;
                   }
+                  else if(x.toLowerCase() == "please repeat"){
+                     text1 = "Which is the red planet? It got the colour red because of the rusty iron on its surface."
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
                });
                await wait(5000);
             }while(isSuccess != true)
             // await wait(10000);
             break;
          case 5:
-            voiceMessage = "Which is the largest planet in the solar system? It is a gas giant and its colour changes with storms and wind in the planet's atmosphere."
+            voiceMessage = "Which is the largest planet in the solar system? It is a gas giant."
             translateLang(voiceMessage);
-            await wait(7000);
+            await wait(5000);
                do{
                   await convertSpeechToText((x) => {
                      if (x.toLowerCase() == "jupiter") {
@@ -383,15 +402,20 @@ async function planetDes() {
                         translateLang(text1);
                         isSuccess = false;
                      }
+                     else if(x.toLowerCase() == "please repeat"){
+                        text1 = "Which is the largest planet in the solar system? It is a gas giant and its colour changes with storms and wind in the planet's atmosphere."
+                        translateLang(text1);
+                        isSuccess = false;
+                     }
                   });
-                  await wait(5000);
+                  await wait(6000);
                }while(isSuccess != true)
             // await wait(10000);
             break;
          case 6:
             voiceMessage = "Which is the planet with rings? It has a set of 7 main rings with spaces between them."
             translateLang(voiceMessage);
-            await wait(7000);
+            await wait(5000);
             do{
                await convertSpeechToText((x) => {
                   if (x.toLowerCase() == "saturn") {
@@ -408,6 +432,11 @@ async function planetDes() {
                      translateLang(text1);
                      isSuccess = false;
                   }
+                  else if(x.toLowerCase() == "please repeat"){
+                     text1 = "Which is the planet with rings? It has a set of 7 main rings with spaces between them."
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
                });
                await wait(5000);
             }while(isSuccess != true)
@@ -416,7 +445,7 @@ async function planetDes() {
          case 7:
             voiceMessage = "Which is the planet which is blue in colour and has faint rings?"
             translateLang(voiceMessage);
-            await wait(7000);
+            await wait(5000);
             do{
                await convertSpeechToText((x) => {
                   if (x.toLowerCase() == "uranus") {
@@ -438,15 +467,20 @@ async function planetDes() {
                      translateLang(text1);
                      isSuccess = false;
                   }
+                  else if(x.toLowerCase() == "please repeat"){
+                     text1 = "Which is the planet which is blue in colour and has faint rings?"
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
                });
-               await wait(5000);
+               await wait(6000);
             }while(isSuccess != true)
             // await wait(10000);
             break;
          case 8:
             voiceMessage = "Which is the dark, cold and windy planet?<br>(It's colour is dark blue.)"
             translateLang(voiceMessage)
-            await wait(7000);
+            await wait(6000);
             do{
                await convertSpeechToText((x) => {
                   if (x.toLowerCase() == "neptune") {
@@ -468,8 +502,13 @@ async function planetDes() {
                      translateLang(text1);
                      isSuccess = false;
                   }
+                  else if(x.toLowerCase() == "please repeat"){
+                     text1 = "Which is the dark, cold and windy planet?<br>(It's colour is dark blue.)"
+                     translateLang(text1);
+                     isSuccess = false;
+                  }
                });
-               await wait(5000);
+               await wait(7000);
             }while(isSuccess != true)
             // await wait(10000);
             break;
