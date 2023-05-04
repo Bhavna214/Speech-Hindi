@@ -198,8 +198,15 @@ function translateLang(text){
     }
 
     else{
-        dexter_voice("en", text)
-    }
+        let api_url="https://api.mymemory.translated.net/get?q="+text+"&langpair=en|hi";
+        fetch(api_url).then(res=>res.json()).then(data=>{
+        // console.log(data);
+        // document.getElementById("instruct").innerText=data.responseData.translatedText;
+        translatedText = data.responseData.translatedText;
+        toText.setAttribute("placeholder","Translation");
+        dexter_voice("hi", translatedText)
+    });
+}
 }
 
     </script>

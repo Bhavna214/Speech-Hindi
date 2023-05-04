@@ -249,7 +249,7 @@ async function planetDes() {
             
             do{
                await convertSpeechToText((x) => {
-                  if (x.toLowerCase() == "mercury") {
+                  if (x.toLowerCase() == "buddh") {
                      text1 = "Great! It is Mercury.<br>It is closest to the sun!"
                      translateLang(text1);
                      document.getElementById("mercury").style.display="none";
@@ -279,7 +279,7 @@ async function planetDes() {
             //console.log(speech)
             do{
                await convertSpeechToText((x) => {
-                  if (x.toLowerCase() == "venus") {
+                  if (x.toLowerCase() == "shukr") {
                      text1 = "Great! This is Venus which is the hottest planet but comes after Mercury<br>(not the sun). Lets move ahead!"
                      translateLang(text1);
                      document.getElementById("venus").style.display="none";
@@ -288,7 +288,7 @@ async function planetDes() {
                      isSuccess = true;
                      i++;
                   }
-                  else if(x.toLowerCase() == "jupiter"){
+                  else if(x.toLowerCase() == "brhaspati"){
                      text1 = "No the correct planet is smaller in size than this."
                      translateLang(text1);
                      isSuccess = false;
@@ -313,7 +313,7 @@ async function planetDes() {
             await wait(5000);
             do{
                await convertSpeechToText((x) => {
-                  if (x.toLowerCase() == "earth") {
+                  if (x.toLowerCase() == "dharti") {
                      text1 = "Great! The planets before the Milky way are Terrestrial Planets. Earth is the second-last Terrestrial planet."
                      translateLang(text1);
                      document.getElementById("earth").style.display="none";
@@ -348,7 +348,7 @@ async function planetDes() {
             await wait(10000);
             do{
                await convertSpeechToText((x) => {
-                  if (x.toLowerCase() == "mass") {
+                  if (x.toLowerCase() == "mangal") {
                      text1 = "Yes, Mars!!<br>It comes right before the milky way"
                      translateLang(text1);
                      document.getElementById("mars").style.display="none";
@@ -357,7 +357,7 @@ async function planetDes() {
                      isSuccess = true;
                      i++;
                   }
-                  if(x.toLowerCase() == "jupiter"){
+                  if(x.toLowerCase() == "brhaspati"){
                      text1 = "Wrong, The correct planet is smaller in size than this."
                      translateLang(text1);
                      isSuccess = false;
@@ -378,7 +378,7 @@ async function planetDes() {
             await wait(5000);
                do{
                   await convertSpeechToText((x) => {
-                     if (x.toLowerCase() == "jupiter") {
+                     if (x.toLowerCase() == "brhaspati") {
                         text1 = "That's right. Jupiter!<br>It comes right after the milky way."
                         translateLang(text1);
                         document.getElementById("jupiter").style.display="none";
@@ -387,12 +387,12 @@ async function planetDes() {
                         isSuccess = true;
                         i++;
                      }
-                     if(x.toLowerCase() == "venus"){
+                     if(x.toLowerCase() == "shukr"){
                         text1 = "No, the correct planet is larger in size than this."
                         translateLang(text1);
                         isSuccess = false;
                      }
-                     if(x.toLowerCase() == "mars"){
+                     if(x.toLowerCase() == "mangal"){
                         text1 = "No, the correct planet is not completely red."
                         translateLang(text1);
                         isSuccess = false;
